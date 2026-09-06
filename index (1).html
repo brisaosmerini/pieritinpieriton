@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>una cartita para Pieritin Pieriton</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --night:#11141a; --night2:#1b2028; --night3:#252b35;
+  --silver:#e9e8ee; --silver-light:#f5f4f8; --fur:#4b463f; --fur2:#2a2620;
+  --lav:#8b7cb5; --lav-light:#d8cdf0; --lav-dark:#5a4a80;
+  --paper:#f5f1fa; --paper2:#e9e1f4; --ink:#443a58; --gold:#c9ad82;
+  --shadow:rgba(0,0,0,.45);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:100%;height:100%;overflow:hidden}
+body{font-family:Quicksand,sans-serif;background:
+ radial-gradient(circle at 50% 34%,#39414d 0,transparent 27%),
+ radial-gradient(circle at 15% 12%,rgba(183,134,155,.16),transparent 25%),
+ linear-gradient(155deg,var(--night3),var(--night) 68%);color:#f7f4f1;display:flex;justify-content:center;align-items:center;position:relative}
+body:after{content:"";position:fixed;inset:0;pointer-events:none;background-image:radial-gradient(rgba(255,255,255,.16) .7px,transparent .8px);background-size:52px 52px;opacity:.28}
+.phone{position:relative;width:min(100vw,430px);height:100svh;min-height:560px;overflow:hidden;padding:28px 18px;display:flex;align-items:center;justify-content:center}
+/* kaomojis */
+.kaos{position:absolute;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+.kao{position:absolute;color:rgba(235,220,226,.72);font-size:12px;white-space:nowrap;letter-spacing:.5px;text-shadow:0 0 12px rgba(217,184,198,.22);animation:drift 7s ease-in-out infinite}
+.k1{top:9%;left:5%;font-size:13px}.k2{top:17%;right:4%;animation-delay:1.2s}.k3{top:34%;left:1%;animation-delay:2.2s}.k4{top:47%;right:2%;animation-delay:.7s}.k5{bottom:22%;left:4%;animation-delay:1.8s}.k6{bottom:10%;right:5%;animation-delay:2.8s}.k7{top:7%;left:42%;font-size:10px;opacity:.5}.k8{bottom:35%;right:8%;font-size:10px;opacity:.55}
+@keyframes drift{0%,100%{transform:translateY(0) rotate(-2deg);opacity:.5}50%{transform:translateY(-8px) rotate(2deg);opacity:.9}}
+.stars{position:absolute;inset:0;pointer-events:none;z-index:0}.star{position:absolute;color:#f0e7e9;opacity:.6;animation:twinkle 2.8s ease-in-out infinite}.s1{top:12%;left:22%}.s2{top:28%;right:17%;animation-delay:1s}.s3{bottom:28%;left:16%;animation-delay:.5s}.s4{bottom:13%;right:25%;animation-delay:1.6s}.s5{top:41%;left:11%;font-size:8px;animation-delay:2s}
+@keyframes twinkle{50%{opacity:.15;transform:scale(.75)}}
+.glow{position:absolute;width:310px;height:310px;border-radius:50%;background:radial-gradient(circle,rgba(208,211,218,.18),transparent 68%);filter:blur(7px);animation:breathe 4.5s ease-in-out infinite;z-index:0}
+@keyframes breathe{50%{transform:scale(1.08);opacity:.72}}
+.scene{position:relative;z-index:3;width:100%;display:flex;flex-direction:column;align-items:center;text-align:center;transition:.6s ease}.scene.hide{opacity:0;transform:scale(.9);filter:blur(8px);pointer-events:none}
+.gorilla-wrap{position:relative;width:270px;height:315px;animation:float 4s ease-in-out infinite;filter:drop-shadow(0 24px 22px rgba(0,0,0,.42))}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+/* gorila tierno */
+.gorilla{position:absolute;inset:0}
+.ear{position:absolute;width:50px;height:58px;top:78px;background:radial-gradient(circle at 38% 32%,#5f594e,#3a352c 70%);border:2px solid #6b6459;border-radius:50%;z-index:2}.ear:after{content:"";position:absolute;inset:11px;background:#a8927e;border-radius:50%;opacity:.55}.ear.left{left:14px}.ear.right{right:14px}
+.head{position:absolute;width:172px;height:152px;left:49px;top:26px;border:2px solid #6b6459;border-radius:52% 52% 46% 46%;background:radial-gradient(circle at 34% 26%,#736c5f,#4a453b 52%,#37332b 100%);z-index:4}
+.crest{position:absolute;width:56px;height:26px;left:107px;top:14px;background:linear-gradient(150deg,#5c5548,#3a352c);border-radius:60% 60% 50% 50%;transform:rotate(-4deg);z-index:5;opacity:.9}
+.brow{position:absolute;top:78px;width:24px;height:7px;border-top:3px solid #4c4638;border-radius:50%;z-index:7;opacity:.75}.brow.left{left:53px;transform:rotate(-8deg)}.brow.right{right:53px;transform:rotate(8deg)}
+.eye{position:absolute;top:90px;width:22px;height:25px;background:#241f1a;border-radius:50%;z-index:8;animation:blink 5s infinite;box-shadow:0 0 0 3px rgba(255,255,255,.06)}.eye:after{content:"";position:absolute;width:8px;height:8px;left:4px;top:3px;background:#fdfaf5;border-radius:50%}.eye:before{content:"";position:absolute;width:3px;height:3px;right:4px;bottom:5px;background:#fdfaf5;border-radius:50%;opacity:.85}.eye.left{left:53px}.eye.right{right:53px}@keyframes blink{0%,91%,100%{transform:scaleY(1)}94%{transform:scaleY(.12)}}
+.cheek{position:absolute;width:30px;height:16px;border-radius:50%;background:#ff9fae;opacity:.5;top:120px;z-index:7;filter:blur(.3px)}.cheek.left{left:16px}.cheek.right{right:16px}
+.muzzle{position:absolute;width:104px;height:64px;left:34px;top:122px;background:linear-gradient(150deg,#f0e2cd,#d9c3a1);border-radius:48% 48% 55% 55%;z-index:7;border:1px solid #cbb28c}
+.nose{position:absolute;width:32px;height:17px;left:36px;top:8px;background:#4a3b2e;border-radius:45%}.nostril{position:absolute;width:6px;height:4px;top:7px;border-radius:50%;background:#241a12}.nostril.a{left:6px}.nostril.b{right:6px}
+.mouth{position:absolute;left:35px;top:33px;width:34px;height:16px;border-bottom:3.5px solid #4a3b2e;border-radius:0 0 55% 55%;transition:.3s}.gorilla-wrap:hover .mouth{transform:scaleX(1.08)}
+.body{position:absolute;width:184px;height:140px;left:43px;top:172px;border:2px solid #6b6459;border-radius:50% 50% 40% 40%;background:linear-gradient(150deg,#524c40,#37332b);z-index:2;overflow:hidden}
+.silver{position:absolute;width:132px;height:150px;left:26px;top:-24px;background:linear-gradient(155deg,#fdfcfa 0,#e9e8ee 42%,#c3c0c8 100%);border-radius:48% 45% 40% 40%;transform:rotate(1deg);box-shadow:inset -13px 0 22px rgba(255,255,255,.35)}
+.silver:after{content:"";position:absolute;right:6px;top:12px;width:44px;height:110px;border-radius:50%;background:linear-gradient(180deg,rgba(255,255,255,.7),transparent);transform:rotate(-10deg)}
+.arm{position:absolute;top:172px;width:58px;height:108px;border:2px solid #6b6459;border-radius:46%;background:linear-gradient(150deg,#524c40,#37332b);z-index:6}.arm.left{left:6px;transform:rotate(14deg)}.arm.right{right:6px;transform:rotate(-14deg)}
+.hand{position:absolute;top:245px;width:52px;height:38px;border:2px solid #6b6459;border-radius:50%;background:#443f35;z-index:10}.hand.left{left:44px;transform:rotate(-8deg)}.hand.right{right:44px;transform:rotate(8deg)}
+/* carta pequeña */
+.envelope{position:absolute;left:79px;top:217px;width:112px;height:76px;border-radius:8px;background:linear-gradient(145deg,#faf7fd,#e9e1f4);border:2px solid #9c8bc4;box-shadow:0 10px 24px rgba(0,0,0,.35),0 0 18px rgba(139,124,181,.16);z-index:11;cursor:pointer;transform:rotate(-2deg);animation:letterFloat 2.8s ease-in-out infinite;overflow:hidden}.envelope:before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,transparent 49%,#cabce8 50%,transparent 51%),linear-gradient(225deg,transparent 49%,#cabce8 50%,transparent 51%);opacity:.75}.flap{position:absolute;left:0;top:0;width:0;height:0;border-left:54px solid transparent;border-right:54px solid transparent;border-top:39px solid #d8cdf0;z-index:2}.seal{position:absolute;left:50%;top:58%;transform:translate(-50%,-50%);width:23px;height:23px;border-radius:50%;background:#7e6aab;color:#f8f5fc;font-size:12px;display:flex;align-items:center;justify-content:center;z-index:4;box-shadow:0 2px 6px rgba(0,0,0,.2)}
+@keyframes letterFloat{50%{transform:rotate(-2deg) translateY(-6px);box-shadow:0 15px 28px rgba(0,0,0,.38),0 0 23px rgba(139,124,181,.22)}}
+.caption{margin-top:8px;font-size:1.08rem;font-weight:600;color:#f1e8eb}.subcaption{margin-top:7px;font-size:.8rem;color:#b9adb3}.subcaption span{color:#d1afbc}
+.music{position:absolute;right:17px;bottom:17px;width:47px;height:47px;border-radius:50%;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.07);color:#f2e9ed;backdrop-filter:blur(10px);font-size:18px;z-index:30;box-shadow:0 7px 18px rgba(0,0,0,.22)}.music.playing{animation:spin 4s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
+/* overlay + carta */
+.overlay{position:absolute;inset:0;background:rgba(7,9,12,.7);backdrop-filter:blur(7px);opacity:0;pointer-events:none;transition:.45s;z-index:15}.overlay.open{opacity:1;pointer-events:auto}
+.letter{position:absolute;z-index:20;left:50%;top:50%;width:calc(100% - 30px);height:min(690px,89svh);transform:translate(-50%,-46%) scale(.55) rotateX(16deg);opacity:0;pointer-events:none;background:
+ radial-gradient(circle at 8% 8%,rgba(139,124,181,.17),transparent 30%),
+ radial-gradient(circle at 95% 92%,rgba(201,173,130,.13),transparent 32%),var(--paper);color:var(--ink);border-radius:13px;padding:31px 24px 25px;box-shadow:0 30px 75px rgba(0,0,0,.62),0 0 0 1px rgba(139,124,181,.4);transition:.72s cubic-bezier(.2,.9,.25,1.12)}
+.letter.open{transform:translate(-50%,-50%) scale(1) rotateX(0);opacity:1;pointer-events:auto}
+.letter:before{content:"";position:absolute;inset:8px;border:1px solid #c9ad82;border-radius:9px;pointer-events:none}.letter:after{content:"";position:absolute;inset:12px;border:1px solid #d8cdf0;border-radius:7px;pointer-events:none}
+.corner{position:absolute;width:27px;height:27px;border:2px solid #8b7cb5;opacity:.72;z-index:2}.tl{top:5px;left:5px;border-right:0;border-bottom:0}.tr{top:5px;right:5px;border-left:0;border-bottom:0}.bl{bottom:5px;left:5px;border-right:0;border-top:0}.br{bottom:5px;right:5px;border-left:0;border-top:0}
+.close{position:absolute;right:14px;top:10px;background:none;border:0;color:#7d6aab;font-size:20px;z-index:4;cursor:pointer}.close:hover{transform:rotate(90deg)}
+.letter-top{text-align:center;color:#7d6aab;letter-spacing:5px;font-size:11px}.eyebrow{text-align:center;text-transform:uppercase;letter-spacing:3.2px;color:#8a7ab3;font-size:9px;font-weight:700;margin-top:8px}.title{font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:600;text-align:center;color:#5e4a82;font-size:2.25rem;margin-top:1px}.divider{width:88px;height:1px;margin:11px auto 15px;background:linear-gradient(90deg,transparent,#c9ad82,transparent);position:relative}.divider:after{content:"♡";position:absolute;left:50%;top:50%;transform:translate(-50%,-52%);background:var(--paper);padding:0 8px;color:#7d6aab;font-size:13px}
+.scroll{height:calc(100% - 100px);overflow:auto;padding:0 7px 8px 4px;scrollbar-width:thin;scrollbar-color:#cabce8 transparent}.text{font-family:"Cormorant Garamond",serif;font-size:1.17rem;line-height:1.8;white-space:pre-line}.text:first-letter{font-size:2.65rem;color:#6b5698;float:left;line-height:.8;margin:8px 6px 0 0}.signature{text-align:right;margin-top:23px;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:1.22rem;color:#6b5698}.end-kao{text-align:center;margin-top:17px;color:#7d6aab;font-size:.78rem;line-height:2.1}
+/* kaomojis when open */
+.open-kao{position:absolute;z-index:19;color:rgba(210,199,235,.85);font-size:11px;pointer-events:none;opacity:0;transition:.5s}.overlay.open ~ .open-kao{opacity:1}.ok1{top:18%;left:3%}.ok2{top:31%;right:1%}.ok3{bottom:19%;left:3%}.ok4{bottom:8%;right:5%}
+@media(max-width:360px){.gorilla-wrap{transform:scale(.9);margin:-12px 0}.caption{font-size:1rem}.letter{padding-left:20px;padding-right:20px}.text{font-size:1.06rem;line-height:1.72}.title{font-size:2rem}}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.2s!important}}
+</style>
+</head>
+<body>
+<div class="phone">
+  <div class="stars"><span class="star s1">✦</span><span class="star s2">✧</span><span class="star s3">✦</span><span class="star s4">·</span><span class="star s5">✧</span></div>
+  <div class="kaos">
+    <span class="kao k1">( ˶ᵔ ᵕ ᵔ˶ )</span>
+    <span class="kao k2">૮(˶ᵔ ᵕ ᵔ˶)ა</span>
+    <span class="kao k3">(｡•ㅅ•｡)♡</span>
+    <span class="kao k4">(づ˶•༝•˶)づ</span>
+    <span class="kao k5">(˶˃ ᵕ ˂˶) .ᐟ.ᐟ</span>
+    <span class="kao k6">(っ˘ω˘ς )</span>
+    <span class="kao k7">♡ · ˚ ✧</span>
+    <span class="kao k8">( ˘͈ ᵕ ˘͈ )</span>
+  </div>
+  <div class="glow"></div>
+  <audio id="music" loop preload="auto">
+    <source src="musica/Magic%20-%20Piero%20Piccioni.mp3" type="audio/mpeg">
+  </audio>
+  <button class="music" id="musicBtn" aria-label="música">♪</button>
+
+  <main class="scene" id="scene">
+    <div class="gorilla-wrap">
+      <div class="gorilla">
+        <div class="crest"></div><div class="ear left"></div><div class="ear right"></div>
+        <div class="head">
+          <div class="brow left"></div><div class="brow right"></div><div class="eye left"></div><div class="eye right"></div>
+          <div class="cheek left"></div><div class="cheek right"></div>
+          <div class="muzzle"><div class="nose"><span class="nostril a"></span><span class="nostril b"></span></div><div class="mouth"></div></div>
+        </div>
+        <div class="body"><div class="silver"></div></div>
+        <div class="arm left"></div><div class="arm right"></div><div class="hand left"></div><div class="hand right"></div>
+        <div class="envelope" id="envelope"><div class="flap"></div><div class="seal">♡</div></div>
+      </div>
+    </div>
+    <p class="caption">Tengo algo especial para vos</p>
+    <p class="subcaption">tocá la cartita <span>૮ ˶ᵔ ᵕ ᵔ˶ ა</span></p>
+  </main>
+
+  <div class="overlay" id="overlay"></div>
+  <span class="open-kao ok1">(´｡• ᵕ •｡`) ♡</span><span class="open-kao ok2">(˶ᵔ ᵕ ᵔ˶)ﾉﾞ</span><span class="open-kao ok3">♡(｡- ᵕ -｡)</span><span class="open-kao ok4">(つ≧▽≦)つ</span>
+
+  <section class="letter" id="letter" aria-hidden="true">
+    <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+    <button class="close" id="close" aria-label="cerrar">×</button>
+    <div class="letter-top">✦　♡　✦</div>
+    <div class="eyebrow">una pequeña carta</div>
+    <h1 class="title">Para vos</h1>
+    <div class="divider"></div>
+    <div class="scroll">
+      <div class="text">Esto es un poco raro porque apenas nos conocemos y no sé muy bien cómo decirlo sin que parezca exagerado. Pero aquí voy.
+
+Desde que te conocí, hay algo en ti que no sé explicar. No es que haya pasado nada grandioso ni que hayamos compartido grandes historias, pero cuando hablamos (aunque sea poquito), cuando te ríes o cuando te quedas callado, siento que hay algo distinto en ti. Algo que me da curiosidad. Algo que me hace querer saber más.
+
+Y no sé si será que coincidimos en el momento justo, o que tu forma de ser me resulta familiar sin serlo, pero el caso es que me gusta cómo me siento cuando estoy cerca de ti.
+
+A veces la vida se parece a un mapa lleno de caminos, y tú apareciste como una de esas rutas que no estaban planeadas pero que te dan ganas de desviarte solo para ver a dónde llevan.
+
+No quiero declararme ni esperar nada. Solo quería que supieras que, aunque llevamos poco tiempo conociéndonos, para mí ya eres especial. Y que me alegra haberte encontrado.
+
+No sé qué va a pasar mañana ni quiero ponerle nombre a todo todavía. Solamente quería que supieras que me gustás, que me hacés bien y que me alegra muchísimo haberte encontrado.
+
+Así que... esta cartita es para vos. Porque sí. Porque me dieron ganas de hacerte algo lindo.</div>
+      <div class="signature">con mucho cariño,<br>yo.</div>
+      <div class="end-kao">( ˶ˆᗜˆ˵ )　♡　(˶ᵔ ᵕ ᵔ˶)<br>✦　gracias por existir　✦</div>
+    </div>
+  </section>
+</div>
+<script>
+const music=document.getElementById('music'), musicBtn=document.getElementById('musicBtn');
+music.volume = 0.25;
+let playing=false;
+function startMusic(){music.play().then(()=>{playing=true;musicBtn.textContent='♫';musicBtn.classList.add('playing')}).catch(()=>{})}
+function toggleMusic(){if(playing){music.pause();playing=false;musicBtn.textContent='♪';musicBtn.classList.remove('playing')}else startMusic()}
+musicBtn.addEventListener('click',toggleMusic);
+const scene=document.getElementById('scene'),overlay=document.getElementById('overlay'),letter=document.getElementById('letter'),envelope=document.getElementById('envelope'),close=document.getElementById('close');
+function openLetter(){scene.classList.add('hide');overlay.classList.add('open');letter.setAttribute('aria-hidden','false');setTimeout(()=>letter.classList.add('open'),90);if(!playing)startMusic()}
+function closeLetter(){letter.classList.remove('open');letter.setAttribute('aria-hidden','true');setTimeout(()=>{overlay.classList.remove('open');scene.classList.remove('hide')},260)}
+envelope.addEventListener('click',openLetter);overlay.addEventListener('click',closeLetter);close.addEventListener('click',closeLetter);
+</script>
+</body>
+</html>
